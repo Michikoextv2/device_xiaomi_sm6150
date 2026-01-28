@@ -31,6 +31,9 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 # API level, the device has been commercially launched on
 PRODUCT_SHIPPING_API_LEVEL := 29
 
+# Inherit from Dolby
+$(call inherit-product-if-exists, vendor/sony/dolby/sonydolby.mk)
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
