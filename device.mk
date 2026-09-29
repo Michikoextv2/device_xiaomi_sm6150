@@ -28,6 +28,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# Inherit Xiaomi Camera
+$(call inherit-product-if-exists, vendor/xiaomi/camera/device.mk)
+
+# Inherit surya firmware images
+$(call inherit-product, firmware/xiaomi/surya/Android.mk)
+
+# Sign keys
+-include vendor/private/keys/keys.mk
+
 # API level, the device has been commercially launched on
 PRODUCT_SHIPPING_API_LEVEL := 29
 
